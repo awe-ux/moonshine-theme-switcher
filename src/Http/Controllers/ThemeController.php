@@ -10,12 +10,12 @@ class ThemeController extends MoonShineController
 {
     public function update(MoonShineRequest $request)
     {
-        $cookie = $request->hasCookie(config('awe-ux-moonshine-theme.cookie.name'))
-            ? Cookie::forget(config('awe-ux-moonshine-theme.cookie.name'))
+        $cookie = $request->hasCookie(config('moonshine-theme.cookie.name'))
+            ? Cookie::forget(config('moonshine-theme.cookie.name'))
             : cookie(
-                config('awe-ux-moonshine-theme.cookie.name'),
-                config('awe-ux-moonshine-theme.cookie.value'),
-                config('awe-ux-moonshine-theme.cookie.duration')
+                config('moonshine-theme.cookie.name'),
+                config('moonshine-theme.cookie.value'),
+                config('moonshine-theme.cookie.duration')
             );
 
         return Redirect::to($request->get('uri'))->withCookie($cookie);

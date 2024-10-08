@@ -9,7 +9,7 @@ composer require awe-ux/moonshine-theme
 ```shell
 php artisan vendor:publish --provider='AweUx\MoonshineTheme\Providers\ThemeServiceProvider'  
 ```
-After publishing, you will be able to find the config file `moonshine-theme.php` in the directory `config` of your project and `minimalictic.css` in `public/css`.
+After publishing, you will be able to find the config file `moonshine-theme.php` in the directory `config` of your project.
 
 
 ## Reset cache after publish provider

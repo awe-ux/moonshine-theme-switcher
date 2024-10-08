@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'minimalistic_css_path' => '/public/css/minimalistic.css',
+    'minimalistic_css_path' => '/vendor/moonshine/assets/minimalistic.css',
 
     'cookie' => [
         'name' => 'minimalistic',

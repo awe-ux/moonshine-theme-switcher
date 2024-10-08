@@ -18,8 +18,8 @@ class ThemeSwitcher
 
     static function layoutBuilder(LayoutBuilder $layout): LayoutBuilder
     {
-        if (request()->hasCookie(config('awe-ux-moonshine-theme.cookie.name'))) {
-            $layout->bodyClass('moonshine-theme-minimalistic');
+        if (request()->hasCookie(config('moonshine-theme.cookie.name'))) {
+            $layout->bodyClass('theme-minimalistic');
         }
 
         return $layout;
