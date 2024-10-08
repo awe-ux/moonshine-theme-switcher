@@ -1,5 +1,9 @@
 # Theme switcher for [MoonShine Laravel admin panel](https://moonshine-laravel.com)
 
+## Description
+#### This package is designed to be able to change the standard design theme to a minimalistic one. 
+#### In the file `config.php` you have the option to change the name, value and lifetime of the cookie, change the connection of the minimalistic.css file, set your own colors for a minimalistic theme
+
 ## Installation
 ```shell
 composer require awe-ux/moonshine-theme
