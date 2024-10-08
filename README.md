@@ -1,1 +1,66 @@
-# moonshine-theme-switcher
+# Theme switcher for [MoonShine Laravel admin panel](https://moonshine-laravel.com)
+
+## Installation
+```shell
+composer require awe-ux/moonshine-theme
+```
+
+## Publish provider
+```shell
+php artisan vendor:publish --provider='MoonShine\Theme\Providers\ThemeServiceProvider'  
+```
+After publishing, you will be able to find the config file `moonshine-theme.php` in the directory `config` of your project.
+
+
+## Reset cache after publish provider
+```shell
+php artisan optimize:clear
+```
+
+## Usage
+Add your `LayoutBuilder` to `ThemeSwitcher::layoutBuilder(LayoutBuilder $layout): LayoutBuilder` in `MoonShineLayout`.
+```php
+use MoonShine\Theme\Classes\ThemeSwitcher;
+
+final class MoonShineLayout implements MoonShineLayoutContract
+{
+    public static function build(): LayoutBuilder
+    {
+        ThemeSwitcher::layoutBuilder(
+            LayoutBuilder::make([
+                Sidebar::make([
+                    Menu::make(),
+                    When::make(),
+                ]),
+            LayoutBlock::make([
+                Flash::make(),
+                Header::make([]),
+                Content::make(),
+                Footer::make()
+            ]),
+            ])
+        );
+    }
+```
+Then need add button-switcher to layout. Use `ThemeSwitcher::make(Closure|string $label): ActionButton`.
+```php
+ThemeSwitcher::layoutBuilder(
+    LayoutBuilder::make([
+        Sidebar::make([
+            Menu::make(),
+            When::make(),
+        ]),
+    LayoutBlock::make([
+        Flash::make(),
+        Header::make([
+            ThemeSwitcher::make('Switch moonshine-theme')->icon('heroicons.arrow-path-rounded-square')->info(),
+        ]),
+        Content::make(),
+        Footer::make()
+    ]),
+    ])
+);
+```
+#### `ThemeSwitcher::make() - ActionButton`. You can use all ActionButton methods for it. 
+### Warning! 
+`ThemeSwitcher::make()->async()` not working yet, don't use this method.

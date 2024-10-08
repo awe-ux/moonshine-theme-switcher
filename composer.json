@@ -1,0 +1,32 @@
+{
+  "name": "awe-ux/moonshine-theme",
+  "type": "library",
+  "description": "Moonshine theme switcher",
+  "keywords": ["moonshine", "theme"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "awe-ux",
+      "homepage": "https://github.com/awe-ux"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "moonshine/moonshine": "^2.20.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "AweUx\\MoonshineTheme\\": "src/"
+    }
+  },
+  "conflict": {
+    "moonshine/moonshine": "<2.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "AweUx\\MoonshineTheme\\Providers\\ThemeServiceProvider"
+      ]
+    }
+  }
+}
