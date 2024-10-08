@@ -7,9 +7,9 @@ composer require awe-ux/moonshine-theme
 
 ## Publish provider
 ```shell
-php artisan vendor:publish --provider='MoonShine\Theme\Providers\ThemeServiceProvider'  
+php artisan vendor:publish --provider='AweUx\MoonshineTheme\Providers\ThemeServiceProvider'  
 ```
-After publishing, you will be able to find the config file `moonshine-theme.php` in the directory `config` of your project.
+After publishing, you will be able to find the config file `moonshine-theme.php` in the directory `config` of your project and `minimalictic.css` in `public/css`.
 
 
 ## Reset cache after publish provider
@@ -18,7 +18,8 @@ php artisan optimize:clear
 ```
 
 ## Usage
-Add your `LayoutBuilder` to `ThemeSwitcher::layoutBuilder(LayoutBuilder $layout): LayoutBuilder` in `MoonShineLayout`.
+#### If you don't published `MoonShineLayout`, then you need to do it. Look it [here](https://moonshine-laravel.com/docs/resource/appearance/appearance-layout_builder).
+Wrap your `LayoutBuilder` in `ThemeSwitcher::layoutBuilder(LayoutBuilder $layout): LayoutBuilder` in `MoonShineLayout`.
 ```php
 use MoonShine\Theme\Classes\ThemeSwitcher;
 
