@@ -21,7 +21,6 @@ class ThemeServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__.'/../routes/theme.php');
         $this->publishes([
             __DIR__.'/../config/theme.php' => config_path('moonshine-theme.php'),
-            __DIR__.'/../public/css/minimalistic.css' => public_path('css/minimalistic.css'),
         ]);
 
         $this->minimalisticTheme();
