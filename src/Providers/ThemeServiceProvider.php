@@ -20,11 +20,11 @@ class ThemeServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/theme.php');
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/theme.php',
+            __DIR__ . '/../config/moonshine-theme.php',
             'moonshine-theme'
         );
         $this->publishes([
-            __DIR__.'/../config/theme.php' => config_path('moonshine-theme.php'),
+            __DIR__.'/../config/moonshine-theme.php' => config_path('moonshine-theme.php'),
         ]);
 
         $this->minimalisticTheme();
