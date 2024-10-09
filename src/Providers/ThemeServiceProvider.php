@@ -19,6 +19,10 @@ class ThemeServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/theme.php');
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/theme.php',
+            'moonshine-theme'
+        );
         $this->publishes([
             __DIR__.'/../config/theme.php' => config_path('moonshine-theme.php'),
         ]);
