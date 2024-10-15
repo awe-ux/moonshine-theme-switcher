@@ -1,7 +1,7 @@
 # Theme switcher for [MoonShine Laravel admin panel](https://moonshine-laravel.com)
 
 ## Description
-#### This package is designed to be able to change the standard design theme to a minimalistic one. 
+#### This package is designed to be able to change the standard design theme to a minimalistic one.
 #### In the file `config.php` you have the option to change the name, value and lifetime of the cookie, change the connection of the minimalistic.css file, set your own colors for a minimalistic theme
 
 ## Installation
@@ -25,7 +25,7 @@ php artisan optimize:clear
 #### If you don't published `MoonShineLayout`, then you need to do it. Look it [here](https://moonshine-laravel.com/docs/resource/appearance/appearance-layout_builder).
 Wrap your `LayoutBuilder` in `ThemeSwitcher::layoutBuilder(LayoutBuilder $layout): LayoutBuilder` in `MoonShineLayout`.
 ```php
-use MoonShine\Theme\Classes\ThemeSwitcher;
+use AweUx\MoonshineTheme\Classes\ThemeSwitcher;
 
 final class MoonShineLayout implements MoonShineLayoutContract
 {
@@ -66,6 +66,6 @@ ThemeSwitcher::layoutBuilder(
     ])
 );
 ```
-#### `ThemeSwitcher::make() - ActionButton`. You can use all ActionButton methods for it. 
-### Warning! 
-`ThemeSwitcher::make()->async()` not working yet, don't use this method.
+#### `ThemeSwitcher::make() - ActionButton`. You can use all ActionButton methods for it.
+> [!WARNING]
+> `ThemeSwitcher::make()->async()` not working, don't use this method.
