@@ -3,8 +3,11 @@
 namespace AweUx\MoonshineTheme\Classes;
 
 use Closure;
-use MoonShine\ActionButtons\ActionButton;
-use MoonShine\Components\Layout\LayoutBuilder;
+use MoonShine\UI\Components\ActionButton;
+use MoonShine\UI\Components\Layout\Body;
+use MoonShine\UI\Components\Layout\Html;
+use MoonShine\UI\Components\Layout\Layout;
+use Throwable;
 
 class ThemeSwitcher
 {
@@ -16,10 +19,19 @@ class ThemeSwitcher
         );
     }
 
-    static function layoutBuilder(LayoutBuilder $layout): LayoutBuilder
+    /**
+     * @throws Throwable
+     */
+    static function layoutBuilder(Layout $layout): Layout
     {
         if (request()->hasCookie(config('moonshine-theme.cookie.name'))) {
-            $layout->bodyClass('theme-minimalistic');
+            $layout->getComponents()->each(function (Html $component) {
+               $component->getComponents()->each(function ($item) {
+                   if ($item instanceof Body) {
+                      $item->class('theme-minimalistic');
+                   }
+               });
+            });
         }
 
         return $layout;

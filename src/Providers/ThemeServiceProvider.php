@@ -2,6 +2,7 @@
 namespace AweUx\MoonshineTheme\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use MoonShine\AssetManager\Css;
 
 class ThemeServiceProvider extends ServiceProvider
 {
@@ -33,7 +34,7 @@ class ThemeServiceProvider extends ServiceProvider
     public function minimalisticTheme(): void
     {
         if (request()->hasCookie(config('moonshine-theme.cookie.name'))) {
-            moonshineAssets()->add([config('moonshine-theme.minimalistic_css_path')]);
+            moonshineAssets()->add(new Css('/vendor/moonshine/assets/minimalistic.css'));
 
             moonshineColors()
                 ->primary(config('moonshine-theme.default.primary'))

@@ -3,8 +3,8 @@ namespace AweUx\MoonshineTheme\Http\Controllers;
 
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Redirect;
-use MoonShine\MoonShineRequest;
-use MoonShine\Http\Controllers\MoonShineController;
+use MoonShine\Laravel\Http\Controllers\MoonShineController;
+use MoonShine\Laravel\MoonShineRequest;
 
 class ThemeController extends MoonShineController
 {
