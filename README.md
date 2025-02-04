@@ -1,7 +1,14 @@
 # Theme switcher for [MoonShine Laravel admin panel](https://moonshine-laravel.com)
 
+## Requirements
+* MoonShine v3.0+
+
+| MoonShine | ChangeLog |
+|-----------|-----------|
+| 2.0+      | 1.0+      |
+| 3.0+      | 2.0+      |
+
 ## Description
-#### Only for ` "moonshine/moonshine": "^3.0.0-beta.1"`
 #### This package is designed to be able to change the standard design theme to a minimalistic one. 
 #### In the file `config.php` you have the option to change the name, value and lifetime of the cookie, change the connection of the minimalistic.css file, set your own colors for a minimalistic theme
 
@@ -46,7 +53,7 @@ final class MoonShineLayout extends AppLayout
                     Body::make([
                         Wrapper::make([
                             $this->getSidebarComponent(),
-                            Block::make([
+                            Div::make([
                                 Flash::make(),
                                 $this->getHeaderComponent(),
                                 Content::make([
