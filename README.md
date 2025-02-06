@@ -1,3 +1,8 @@
+<!--
+title: MoonShine ThemeSwitcher
+versions: 2,3
+-->
+
 # Theme switcher for [MoonShine Laravel admin panel](https://moonshine-laravel.com)
 
 ## Requirements
